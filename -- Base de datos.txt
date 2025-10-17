@@ -1,0 +1,30 @@
+-- Base de datos
+CREATE DATABASE IF NOT EXISTS springboot_crud;
+USE springboot_crud;
+
+-- Tabla de empleados
+CREATE TABLE empleados (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    puesto VARCHAR(100) NOT NULL,
+    salario DECIMAL(10,2) NOT NULL
+);
+
+-- Tabla de platillos (menú)
+CREATE TABLE menu_items (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion VARCHAR(255),
+    precio DECIMAL(10,2) NOT NULL
+);
+
+-- Datos iniciales
+INSERT INTO empleados (nombre, puesto, salario) VALUES
+('Juan Pérez', 'Cocinero', 1800.00),
+('Ana Gómez', 'Mesera', 1500.00),
+('Luis Torres', 'Cajero', 1600.00);
+
+INSERT INTO menu_items (nombre, descripcion, precio) VALUES
+('Tacos al Pastor', 'Tacos de cerdo con piña y salsa verde', 25.50),
+('Enchiladas Verdes', 'Tortillas rellenas con pollo y salsa verde', 30.00),
+('Pozole', 'Sopa tradicional mexicana con maíz y carne', 40.00);
